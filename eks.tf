@@ -8,9 +8,9 @@ module "eks" {
   cluster_endpoint_public_access = true
 
   cluster_addons = {
-    coredns = { most_recent = true }
-    kube_proxy = { most_recent = true }
-    vpc_cni = { most_recent = true }
+    coredns = { addon_version = "v1.11.4-eksbuild.28" }
+    kube_proxy = { addon_version = "v1.30.14-eksbuild.20" }
+    vpc_cni = { addon_version = "v1.21.1-eksbuild.3" }
   }
 
   vpc_id     = module.vpc.vpc_id
